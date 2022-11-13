@@ -1,5 +1,6 @@
 import "./styles.css";
 import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
 
 export default function MainCity(props) {
   return (
