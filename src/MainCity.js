@@ -1,12 +1,17 @@
 import "./styles.css";
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import FormatedDate from "./FormatedDate";
 
 export default function MainCity(props) {
   return (
     <div className="col-6 city">
       <h1 id="mainCity">{props.city}</h1>
-      <h2 className="date">Today is:</h2>
+      <h3 className="date">
+        Today is:
+        <FormatedDate date={props.date} />
+      </h3>
+
       <h2>
         <strong>
           <span className="temperatureC" id="temp1">

@@ -13,7 +13,9 @@ export default function Details(props) {
           Wind: <span id="wind">{props.wind}</span> km/h
         </li>
         <li>
-          <span id="typeW">{props.description}</span>
+          <span id="typeW" className="text-capitalize">
+            {props.description}
+          </span>
         </li>
       </ul>
     </div>

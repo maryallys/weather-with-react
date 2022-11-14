@@ -5,9 +5,9 @@ import MainCity from "./MainCity";
 import "./styles.css";
 
 export default function Search() {
-  let [city, setCity] = useState("null");
-  let [status, setStatus] = useState(false);
+  let [city, setCity] = useState("London");
   let [cityInfo, setCityInfo] = useState({
+    status: false,
     temperatureMax: "",
     temperatureMin: "",
     description: "",
@@ -17,10 +17,11 @@ export default function Search() {
   });
 
   function showTemperature(response) {
-    setStatus(true);
     setCityInfo({
+      status: true,
       temperatureMax: response.data.main.temp_max,
       temperatureMin: response.data.main.temp_min,
+      date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
@@ -45,13 +46,14 @@ export default function Search() {
     </form>
   );
 
-  if (status) {
+  if (cityInfo.status) {
     return (
       <div>
         <MainCity
           city={city}
           temperatureMax={cityInfo.temperatureMax}
           temperatureMin={cityInfo.temperatureMin}
+          date={cityInfo.date}
           icon={cityInfo.icon}
           description={cityInfo.description}
         />
