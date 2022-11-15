@@ -3,6 +3,7 @@ import axios from "axios";
 import Details from "./Details";
 import MainCity from "./MainCity";
 import "./styles.css";
+import "bootstrap/dist/css/bootstrap.css";
 
 export default function Search() {
   let [city, setCity] = useState("London");
@@ -40,29 +41,31 @@ export default function Search() {
   }
 
   let form = (
-    <form onSubmit={handleSubmit} class="search">
-      <input type="search" onChange={updateCity} />
+    <form onSubmit={handleSubmit} className="search">
+      <input className="searchForm" type="search" onChange={updateCity} />
       <input type="submit" value="Search" />
     </form>
   );
 
   if (cityInfo.status) {
     return (
-      <div>
-        <MainCity
-          city={city}
-          temperatureMax={cityInfo.temperatureMax}
-          temperatureMin={cityInfo.temperatureMin}
-          date={cityInfo.date}
-          icon={cityInfo.icon}
-          description={cityInfo.description}
-        />
-        <Details
-          description={cityInfo.description}
-          humidity={cityInfo.humidity}
-          wind={cityInfo.wind}
-        />
-        {form}
+      <div className="container">
+        <div className="row">
+          <MainCity
+            city={city}
+            temperatureMax={cityInfo.temperatureMax}
+            temperatureMin={cityInfo.temperatureMin}
+            icon={cityInfo.icon}
+            description={cityInfo.description}
+          />
+          <Details
+            description={cityInfo.description}
+            humidity={cityInfo.humidity}
+            wind={cityInfo.wind}
+            date={cityInfo.date}
+          />
+          {form}
+        </div>
       </div>
     );
   } else {
