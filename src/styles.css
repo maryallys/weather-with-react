@@ -119,3 +119,7 @@ Form .searchForm {
 text-decoration: none;
 color: #3f3e3e;
 }
+
+.Weather-Forecast-temp-min {
+    opacity: 60;
+}

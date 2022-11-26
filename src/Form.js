@@ -4,11 +4,13 @@ import Details from "./Details";
 import MainCity from "./MainCity";
 import "./styles.css";
 import "bootstrap/dist/css/bootstrap.css";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Search() {
   let [city, setCity] = useState("London");
   let [cityInfo, setCityInfo] = useState({
     status: false,
+    coord: "",
     temperatureMax: "",
     temperatureMin: "",
     description: "",
@@ -20,6 +22,7 @@ export default function Search() {
   function showTemperature(response) {
     setCityInfo({
       status: true,
+      coord: response.data.coord,
       temperatureMax: response.data.main.temp_max,
       temperatureMin: response.data.main.temp_min,
       date: new Date(response.data.dt * 1000),
@@ -33,7 +36,8 @@ export default function Search() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=500df23a19b510acb3b117489ca64dfa`;
+    const apiKey = "500df23a19b510acb3b117489ca64dfa";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
     axios.get(apiUrl).then(showTemperature);
   }
   function updateCity(event) {
@@ -65,6 +69,7 @@ export default function Search() {
             date={cityInfo.date}
           />
           {form}
+          <WeatherForecast coordinates={cityInfo.coord} />
         </div>
       </div>
     );

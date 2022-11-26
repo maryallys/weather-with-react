@@ -9,7 +9,7 @@ export default function MainCity(props) {
     <div className="col-5 city">
       <h1 id="mainCity">{props.city}</h1>
       <h2>
-        <Icons code={props.icon} />
+        <Icons code={props.icon} size={54} />
         <strong>
           <WeatherConverter celsius={props.temperatureMax} />
         </strong>
