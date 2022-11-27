@@ -2,7 +2,6 @@ import "./styles.css";
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Icons from "./Icons";
-import WeatherConverter from "./WeatherConverter";
 
 export default function MainCity(props) {
   return (
@@ -10,10 +9,14 @@ export default function MainCity(props) {
       <h1 id="mainCity">{props.city}</h1>
       <h2>
         <Icons code={props.icon} size={54} />
-        <strong>
-          <WeatherConverter celsius={props.temperatureMax} />
-        </strong>
-        <WeatherConverter celsius={props.temperatureMin} />
+        <div className="weatherTemperature">
+          <span className="temperature">
+            <strong>{Math.round(props.temperatureMax)}°</strong>
+          </span>
+          <span className="temperature">
+            {Math.round(props.temperatureMin)}°
+          </span>
+        </div>
       </h2>
     </div>
   );

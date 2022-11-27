@@ -6,9 +6,10 @@ import Footer from "./Footer";
 export default function App() {
   return (
     <div className="container">
-      <div className="row main"></div>
-      <Form />
-      <Footer />
+      <div className="row main">
+        <Form />
+        <Footer />
+      </div>
     </div>
   );
 }

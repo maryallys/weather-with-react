@@ -69,7 +69,9 @@ export default function Search() {
             date={cityInfo.date}
           />
           {form}
-          <WeatherForecast coordinates={cityInfo.coord} />
+          <div className="forecast">
+            <WeatherForecast coordinates={cityInfo.coord} />
+          </div>
         </div>
       </div>
     );

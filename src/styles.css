@@ -26,12 +26,14 @@ h3 {
 }
 ul {
     list-style: none;
-}
+   }
 .city {
     border: 1px solid #858489;
     border-radius: 5px;
     padding: 5px 10px;
-    margin: 5px auto;
+    margin-top: 5px;
+    margin-right: auto;
+    margin-left: 0;
     max-width: 200px;
 }
 
@@ -39,19 +41,22 @@ ul {
     border: 1px solid #858489;
     border-radius: 5px;
     padding: 5px 10px;
-    margin: 5px auto;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: 0;
     max-width: 200px;
 }
 
 Details .humidity {
     text-align: left;
     margin-bottom: 20px;
+    margin-right: 0;
 }
 
 .search {
     text-align: center;
     margin: 5px auto;
-    padding: 5px 10px;
+    padding: 10px 10px;
     font-size: 18px;
     max-width: 350px;
 }
@@ -72,14 +77,12 @@ Details .humidity {
     max-width: 380px;
 }
 
-.tomorrow {
-    border: 1px solid #d7d6df;
-    border-radius: 5px;
-    margin: 5px;
-}
-
-.tomorrow:hover {
-    color: black;
+.forecast {
+    border: 1px solid #858489;
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin: 5px auto;
+        max-width: 200px;
 }
 
 .footer {
@@ -121,5 +124,27 @@ color: #3f3e3e;
 }
 
 .Weather-Forecast-temp-min {
-    opacity: 60;
+   color: #858489;
+}
+.Weather-Forecast-temp-max {
+    color: black;
+}
+.main {
+    max-width: 500px;
+}
+@media (max-width: 540px) {
+    ul {
+        padding-left: 0!important;
+    }
+    .details {
+        margin: 5px auto;
+    }
+    .city {
+        margin: 5px auto;
+    }
+    .date {
+        margin-bottom: 0;
+    }
+   
+
 }

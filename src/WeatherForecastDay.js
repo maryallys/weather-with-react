@@ -1,5 +1,6 @@
 import React from "react";
 import Icons from "./Icons";
+import "./styles.css";
 
 export default function WeatherForecastDay(props) {
   function maxTemp() {
